@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DespesaForm extends StatefulWidget {
-  const DespesaForm({ Key? key }) : super(key: key);
+  const DespesaForm({ key }) : super(key: key);
 
   @override
   _DespesaFormState createState() => _DespesaFormState();

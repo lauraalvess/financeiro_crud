@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'app/my_app.dart';
 
-/*
+
 void main() {
   runApp(MyApp());
 }
 
-*/
+
 
 //QUESTÕES
 /*
@@ -22,7 +22,7 @@ Esta técnica de programação permite que a execução de atividades ocorram em
 A programação síncrona e linear não é suficiente para atender às funcionalidades, como por exemplo no delay que poderia ocorrer na busca de dados no banco e a renderização de componentes na tela.
 Desta maneira, é possível que o programa não fique preso à demora de um comando, sendo possível fazer uso dos recursos await, async e da classe Future para controlar o temporizador e a ordem de execução dos trechos de códigos apontados por estes marcadores. 
 */
-
+/*
 void main() async{
 	telaInicial();
 	print('carrega a tela');
@@ -49,3 +49,4 @@ void telaInicial(){
 Future confirmaRECaptcha(){
 	return Future.delayed(Duration(seconds: 5), () => print('Aguarda confirmação do usuário'));	
 }
+*/
