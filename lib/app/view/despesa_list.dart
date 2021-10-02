@@ -1,22 +1,15 @@
-import 'package:financeiro_crud/app/database/sqlite/connection.dart';
-import 'package:financeiro_crud/app/my_app.dart';
+import 'package:financeiro_crud/app/database/sqlite/DAO/despesa_dao_impl.dart';
+import 'package:financeiro_crud/app/domain/entities/despesa.dart';
 import 'package:flutter/material.dart';
-import 'package:sqflite/sqflite.dart';
+
+import '../my_app.dart';
 
 class DespesaList extends StatelessWidget {
-  //const DespesaList({ Key? key }) : super(key: key);
 
- /*
-  final lista =[
-    {'nome':'Ana', 'telefone':'17 9999-9999', 'avatar':'https://cdn.pixabay.com/photo/2014/04/03/10/32/user-310807__480.png'},
-    {'nome': 'Andre', 'telefone': '18 9999-9999', 'avatar':'https://cdn.pixabay.com/photo/2016/04/01/11/25/avatar-1300331__480.png'},
-    {'nome': 'Beatriz', 'telefone': '19 9999-9999', 'avatar':'https://cdn.pixabay.com/photo/2014/04/02/14/10/female-306407__480.png'}
-  ];
-*/
-
-  Future<List<Map<String,dynamic>>> _buscar() async{
-        Database db = await Connection.get();
-        return db.query('despesa');
+   Future<List<Despesa>> _buscar() async{
+        //Database db = await Connection.get();
+        //return db.query('despesa');
+        return await DespesaDAOImpl().find();
     }
 
 
@@ -24,11 +17,17 @@ class DespesaList extends StatelessWidget {
   Widget build(BuildContext context) {
     return FutureBuilder(
       future: _buscar(),
+      
       builder: (context, futuro){
+        print(futuro.hasData);
+        print(futuro.hasError);
+        print(futuro.error);
+        print(futuro.hashCode);
         if(futuro.hasData){
-          var lista;
-          lista.length = 0;
-          lista = futuro.data;  
+          //var lista;
+          //lista.length = 0;
+          //lista = futuro.data;  
+           List<Despesa> lista = futuro.data;
           return Scaffold(
       appBar: AppBar(
         title: Text('Lista de Despesas'),
@@ -45,11 +44,11 @@ class DespesaList extends StatelessWidget {
         itemCount: lista.length,
         itemBuilder: (context, i){
           var despesa = lista[i];
-          var avatar = CircleAvatar( backgroundImage: NetworkImage(despesa['url_avatar']),);
+          var avatar = CircleAvatar( backgroundImage: NetworkImage(despesa.urlAvatar),);
           return ListTile(
             leading: avatar,
-            title: Text(despesa['nome']),
-            subtitle:  Text(despesa['tipo']),
+            title: Text(despesa.nome),
+            subtitle:  Text(despesa.tipo),
             trailing: Container(
               width: 100,
               child: Row(
