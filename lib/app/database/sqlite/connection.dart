@@ -5,12 +5,14 @@ import 'package:sqflite/sqflite.dart';
 
 class Connection {
   static Database _db;
+  
 
 
   static Future<Database> get() async {
     // ignore: unnecessary_null_comparison
     if (_db == null) {
       var path = join(await getDatabasesPath(), 'banco_despesas');
+      deleteDatabase(path);
       _db = await openDatabase(
         path,
         version: 1, 

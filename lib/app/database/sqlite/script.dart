@@ -1,7 +1,7 @@
 
   final createTable = '''
   CREATE TABLE despesa(
-     id INT PRIMARY KEY 
+     id INTEGER NOT NULL PRIMARY KEY 
     ,nome VARCHAR(200) NOT NULL
     ,tipo VARCHAR(16) NOT NULL
     ,valor VARCHAR NOT NULL
