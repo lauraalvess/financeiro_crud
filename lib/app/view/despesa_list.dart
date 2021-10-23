@@ -16,11 +16,9 @@ class DespesaList extends StatelessWidget {
   final _back = DespesaListBack();
 
   CircleAvatar circleAvatar(String url) {
-    try {
-      return CircleAvatar(backgroundImage: NetworkImage(url));
-    } catch (e) {
-      return CircleAvatar(child: Icon(Icons.person));
-    }
+    return (Uri.tryParse(url).isAbsolute) ?
+       CircleAvatar(backgroundImage: NetworkImage(url))
+        : CircleAvatar(child: Icon(Icons.person));
   }
 
   Widget iconEditButton(Function onPressed) {
@@ -63,6 +61,7 @@ class DespesaList extends StatelessWidget {
             IconButton(
                 icon: Icon(Icons.add),
                 onPressed: () {
+                  _back.goToForm(context); //****
                   Navigator.of(context).pushNamed(MyApp.DESPESA_FORM);
                 })
           ],
