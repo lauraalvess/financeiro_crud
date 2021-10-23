@@ -3,7 +3,6 @@ import 'package:financeiro_crud/app/view/despesa_list_back.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-import '../my_app.dart';
 
 class DespesaList extends StatelessWidget {
   /*
@@ -62,7 +61,7 @@ class DespesaList extends StatelessWidget {
                 icon: Icon(Icons.add),
                 onPressed: () {
                   _back.goToForm(context); //****
-                  Navigator.of(context).pushNamed(MyApp.DESPESA_FORM);
+                  //Navigator.of(context).pushNamed(MyApp.DESPESA_FORM);
                 })
           ],
         ),
@@ -88,6 +87,9 @@ class DespesaList extends StatelessWidget {
                         return ListTile(
                           leading: circleAvatar(despesa.urlAvatar),
                           title: Text(despesa.nome),
+                           onTap: (){
+                          _back.goToDetails(context, despesa);
+                          },
                           subtitle: Text(despesa.tipo),
                           trailing: Container(
                             width: 100,

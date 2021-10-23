@@ -1,4 +1,5 @@
 
+import 'package:financeiro_crud/app/view/despesa_details.dart';
 import 'package:financeiro_crud/app/view/despesa_form.dart';
 import 'package:financeiro_crud/app/view/despesa_list.dart';
 import 'package:flutter/material.dart';
@@ -10,11 +11,13 @@ class MyApp extends StatelessWidget {
 
   static const HOME = '/';
   static const DESPESA_FORM = 'despesa-form';
+  static const DESPESA_DETAILS = 'contact-details';
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -30,8 +33,8 @@ class MyApp extends StatelessWidget {
       //home: ContactList(),
       routes: {
         HOME:(context) => DespesaList(),
-        DESPESA_FORM: (context) => DespesaForm()
-
+        DESPESA_FORM: (context) => DespesaForm(),
+        DESPESA_DETAILS: (context) => DespesaDetails()
       },
     );
   }

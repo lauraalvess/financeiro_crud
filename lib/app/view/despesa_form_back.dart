@@ -5,23 +5,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:mobx/mobx.dart';
 import 'package:get_it/get_it.dart';
 
-part 'despesa_form_back.g.dart';
 
-class DespesaFormBack = _DespesaFormBack with _$DespesaFormBack;
 
-abstract class _DespesaFormBack with Store{
+class DespesaFormBack with Store{
   Despesa despesa;
   var _service = GetIt.I.get<DespesaService>();
   bool _nameIsValid; 
   bool _typeIsValid; 
   bool _valueIsValid; 
 
-  //@action
   bool get isValid => _nameIsValid && _typeIsValid && _valueIsValid;
 
 
   // diferenciar novo com alteração 
-  _DespesaFormBack(BuildContext context){
+  DespesaFormBack(BuildContext context){
     var parameter = ModalRoute.of(context).settings.arguments;
     despesa = (parameter == null) ? Despesa() : parameter;
   }
