@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "792969036090",
+    "project_id": "financeiro-51682",
+    "storage_bucket": "financeiro-51682.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:792969036090:android:83994cb89c329cb3c01003",
+        "android_client_info": {
+          "package_name": "br.com.laura.financeiro_crud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "792969036090-jop253t2ofiquk7n3i3e4i3t1hu5frs6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAI2XEAXg7JylI2p6PRzaaSyD75vHy1O8w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "792969036090-jop253t2ofiquk7n3i3e4i3t1hu5frs6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,7 +3,7 @@ import 'package:financeiro_crud/app/domain/entities/despesa.dart';
 abstract class DespesaDAO{
 
   save(Despesa despesa);
-  remove(int id);
+  remove(dynamic id);
   Future<List<Despesa>> find();
 
 }

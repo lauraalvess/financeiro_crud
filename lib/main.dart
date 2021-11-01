@@ -1,14 +1,67 @@
+//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:financeiro_crud/app/injection.dart';
+//import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
 
 import 'app/my_app.dart';
 
 
-void main() {
+void main() async {
   setupInjection();
   runApp(MyApp());
-}
+  /*
+  await Firebase.initializeApp();
+  FirebaseFirestore.instance.collection('despesa').doc().set({
+    'nome': 'Mercado',
+    'tipo': 'Alimentação',
+    'valor': '119'
+  });
 
+  var collection = FirebaseFirestore.instance.collection('despesa');
+  collection.doc().set({
+    'nome': 'IFood',
+    'tipo': 'Alimentação',
+    'valor': '45'
+
+  }).then((value) => print('deu certo!')).catchError((error) => print('deu errado! $error'));
+
+  collection.doc('contato3').set({ //contato3 é um ID, se ele já existir, substitui
+    'nome': 'Padaria',
+    'tipo': 'Alimentação',
+    'valor': '10'
+
+  }).then((value) => print('deu certo!')).catchError((error) => print('deu errado! $error'));
+
+  collection.doc('contato3').set({ //contato3 é um ID, se ele já existir, substitui
+    'nome': 'Padaria22',
+    'valor': '100'
+
+  },SetOptions(merge:true) //só altera os itens que foram modificados, mantém o anterior
+  ).then((value) => print('deu certo!')).catchError((error) => print('deu errado! $error'));
+
+  collection.doc('contato3').update({ //contato3 é um ID, se ele já existir, substitui - se usar update nao precisa passar o setoptions
+    'nome': 'Padaria22',
+    'valor': '100'
+
+  }).then((value) => print('deu certo!')).catchError((error) => print('deu errado! $error'));
+   //remover itens 
+   collection.doc('contato3').delete().then((value) => print('deu certo!')).catchError((error) => print('deu errado! $error'));
+
+  //pode ficar desatualizado
+  var result = await collection.get();
+
+  for(var doc in result.docs){
+    print(doc['nome']);
+  }
+  
+  //atualiza na medida que ocorrem alterações
+  collection.snapshots().listen((r) {
+    result = r;
+   });
+
+   */
+}
 
 
 //QUESTÕES

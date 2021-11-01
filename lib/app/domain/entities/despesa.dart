@@ -1,6 +1,6 @@
 class Despesa{
   
-  int id;
+  dynamic id;
   String nome;
   String tipo;
   String valor;
